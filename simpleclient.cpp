@@ -1,3 +1,5 @@
+// 모든 코드는 https://cafe.naver.com/gamepromaster/67에 있습니다.
+
 #include <iostream>
 #include <stdio.h>
 #include <WinSock2.h>
