@@ -30,9 +30,9 @@ int main()
     servAddr.sin_family = AF_INET; 
 
     //servAddr.sin_addr.s_addr = inet_addr("127.0.0.1"); 이 함수가 아래의 양식으로 바뀌었음
-    inet_pton(AF_INET, "127.0.0.1", &servAddr.sin_addr);
+    inet_pton(AF_INET, "127.0.0.1", &servAddr.sin_addr); // inet_pton() : 사람이 알아보기 쉬운 텍스트 현태의 IPv4와 IPv6 주소를 binary 형태로 변환
 
-    servAddr.sin_port = htons(30002);
+    servAddr.sin_port = htons(30002); // htons : 데이터를 네트워크 바이트 순서로 변환
 
     if (connect(hSocket, (SOCKADDR*)&servAddr, sizeof(servAddr)) == SOCKET_ERROR)
         printf("Failed connect() \n");
@@ -45,8 +45,8 @@ int main()
 
     printf("recv %d message : %s \n", recvSize, recvData);
 
-    closesocket(hSocket);
-    WSACleanup();
+    closesocket(hSocket); // 소켓 닫기
+    WSACleanup(); // 
 
     system("pause");
     return 0;
