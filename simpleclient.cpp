@@ -34,6 +34,7 @@ int main()
 
     servAddr.sin_port = htons(30002); // htons : 데이터를 네트워크 바이트 순서로 변환
 
+    // connect(소켓 변수, 서버 주소 구조체, 서버 주소 구조체 크기) : 클라이언트 측에서 서버에 연결을 요청한다.
     if (connect(hSocket, (SOCKADDR*)&servAddr, sizeof(servAddr)) == SOCKET_ERROR)
         printf("Failed connect() \n");
 
